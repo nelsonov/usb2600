@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "atari_controllers_led",
+			"path": "..\\..\\atari_controllers_led"
+		}
+	],
+	"settings": {}
+}

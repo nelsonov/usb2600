@@ -82,7 +82,7 @@ boolean EEPROM8_storeValue(uint8_t variable, uint8_t value) {
     return false;
   uint32 offset = 4;
   bool err = false;  
-  for (uint32_t variable = 0 ; variable < 255; variable++) 
+  for (uint32_t variable = 0 ; variable < 254; variable++) 
     if (0 != storage[variable]) {
         if (!writeHalfWord(pageBase+offset, variable | ((uint16_t)storage[variable]<<8))) {
             err = true;
@@ -96,7 +96,7 @@ boolean EEPROM8_storeValue(uint8_t variable, uint8_t value) {
   return !err;
 }
 
-
+/* Compiler complains that this function is not used
 static void EEPROM8_reset(void) {
   if (erasePage(pageBase)) {
     invalid = false;
@@ -107,12 +107,13 @@ static void EEPROM8_reset(void) {
   for(uint32_t i=0; i<255; i++)
     storage[i] = 0;
 }
+*/
 
 void EEPROM8_init(void) {
   uint32_t flashSize = *(uint16 *) (0x1FFFF7E0);
   pageBase = 0x8000000 + flashSize * 1024 - EEPROM_PAGE_SIZE;
 
-  for(uint32_t i=0; i<255; i++)
+  for(uint32_t i=0; i<254; i++)
     storage[i] = 0;
   if (EEPROM8_MAGIC != GET_WORD(pageBase) && ! erasePage(pageBase) ) {
     invalid = true;

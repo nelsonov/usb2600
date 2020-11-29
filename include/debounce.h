@@ -1,6 +1,7 @@
 #ifndef _DEBOUNCE_H
 #define _DEBOUNCE_H
 
+#include <Arduino.h>
 #define STM32_SPECIFIC
 
 typedef enum {

@@ -4,6 +4,7 @@
  * (The version bundled in Roger's core may be too old.)
  */
 
+#include <Arduino.h>
 #include <USBComposite.h>
 #include "debounce.h"
 
@@ -62,7 +63,6 @@ const uint32 paddleGroundResistor = 100000; // paddleGroundResistor should evenl
 #define READ_ITERATIONS 80
 
 #define NO_VALUE 0xDEADBEEFul
-
 // modified from Stelladaptor
 uint8 dualAxis_desc[] = {
   0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)

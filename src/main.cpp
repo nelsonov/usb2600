@@ -291,7 +291,6 @@ void setup() {
   // default is 55_5
   adc_set_sample_rate(ADC1, ADC_SMPR_239_5);
   adc_set_sample_rate(ADC2, ADC_SMPR_239_5);
-
   for (uint32 i=0;i<NUM_PROFILES;i++)
     profiles[i]->setup();
 
